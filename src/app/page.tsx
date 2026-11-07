@@ -1,8 +1,23 @@
+import { Suspense } from "react";
+import { Banner } from "@/src/components/Banner";
+import { getXschool } from "@/src/services/xschool";
+import { AboutXSchool } from "../components/AboutXSchool";
+
+async function HomeContent() {
+  const data = await getXschool();
+
+  return (
+    <main>
+      <Banner title={data.banner_title} image={data.banner_image} />
+      <AboutXSchool title={data.about_title} description={data.about_description} images={data.about_images} />
+    </main>
+  );
+}
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen flex-col items-center justify-between p-24">
-      <h1 className="text-3xl font-bold">Welcome to my project!</h1>
-    </div>
+    <Suspense fallback={<main className="min-h-svh" />}>
+      <HomeContent />
+    </Suspense>
   );
 }
