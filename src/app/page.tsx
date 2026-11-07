@@ -4,6 +4,7 @@ import { getXschool } from "@/src/services/xschool";
 import { AboutXSchool } from "../components/AboutXSchool";
 import { Founder } from "../components/Founder";
 import { Program } from "../components/Program";
+import { TextSlider } from "../components/TextSlider";
 
 async function HomeContent() {
   const data = await getXschool();
@@ -14,6 +15,7 @@ async function HomeContent() {
       <AboutXSchool title={data.about_title} description={data.about_description} images={data.about_images} />
       <Founder founders={data.founders} />
       <Program programs={data.programs} />
+      <TextSlider textSlider={data.text_slider} />
     </main>
   );
 }
