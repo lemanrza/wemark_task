@@ -16,13 +16,15 @@ export const AboutxSchoolSlider = ({ images }: AboutxSchoolSliderProps) => {
     <div className="w-full py-10">
       <Swiper
         modules={[Autoplay, Pagination, Navigation]}
-        spaceBetween={30}
-        slidesPerView={2.5}
+        spaceBetween={20}
+        slidesPerView={1.5}
+        centeredSlides={false}
         autoplay={{ delay: 2000, disableOnInteraction: false }}
         loop={true}
         breakpoints={{
-          640: { slidesPerView: 2 },
-          1024: { slidesPerView: 3 },
+          640: { slidesPerView: 1.5, spaceBetween: 24 },
+          768: { slidesPerView: 2.5, spaceBetween: 28 },
+          1024: { slidesPerView: 3, spaceBetween: 30 },
         }}
         className="w-full"
       >
