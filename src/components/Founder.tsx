@@ -11,7 +11,7 @@ export function Founder({ founders }: FounderProps) {
   return (
     <section className="px-6 py-10 md:px-12">
       <div className="mx-auto max-w-7xl">
-        <h2 className="mb-10 text-4xl font-extrabold uppercase tracking-tight text-[#111111]">
+        <h2 className="mb-10 text-[2rem] lg:text-[5rem] font-extrabold uppercase tracking-tight text-[#111111]">
           FOUNDER
         </h2>
 
